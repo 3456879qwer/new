@@ -1,0 +1,306 @@
+/* src/styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define CSS Variables based on your Tailwind Theme */
+@layer base {
+  :root {
+    --color-jay-black: theme('colors.jay-black');
+    --color-jay-orange: theme('colors.jay-orange');
+    --color-jay-white: theme('colors.jay-white');
+    --color-jay-gray-light: theme('colors.jay-gray-light');
+    --color-jay-gray-dark: theme('colors.jay-gray-dark');
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-jay-black);
+  color: var(--color-jay-white);
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.shadow-neon {
+  box-shadow: 0 0 5px var(--color-jay-orange),
+              0 0 10px var(--color-jay-orange),
+              0 0 15px var(--color-jay-orange),
+              0 0 20px var(--color-jay-orange);
+}
+
+.shadow-neon-outline {
+  box-shadow: 0 0 5px var(--color-jay-orange) inset,
+              0 0 10px var(--color-jay-orange) inset;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #ff00f2, -0.05em -0.025em 0 #00f2ff, 0.025em 0.05em 0 #f2ff00;
+  }
+  14% {
+    text-shadow: 0.05em 0 0 #ff00f2, -0.05em -0.025em 0 #00f2ff, 0.025em 0.05em 0 #f2ff00;
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 #ff00f2, 0.025em 0.05em 0 #00f2ff, -0.05em 0.025em 0 #f2ff00;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #ff00f2, 0.025em 0.05em 0 #00f2ff, -0.05em 0.025em 0 #f2ff00;
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 #ff00f2, -0.05em 0 0 #00f2ff, 0 -0.05em 0 #f2ff00;
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 #ff00f2, -0.05em 0 0 #00f2ff, 0 -0.05em 0 #f2ff00;
+  }
+  100% {
+    text-shadow: 0.05em 0 0 #ff00f2, -0.05em -0.025em 0 #00f2ff, 0.025em 0.05em 0 #f2ff00;
+  }
+}
+
+/* Holographic Text Effect */
+.holographic-text {
+  position: relative;
+  /* Use your defined theme colors as CSS variables for this */
+  color: var(--color-jay-white);
+  text-shadow:
+    0 0 5px var(--color-jay-orange),
+    0 0 10px var(--color-jay-orange),
+    0 0 15px var(--color-jay-orange),
+    0 0 20px var(--color-jay-orange),
+    0 0 35px var(--color-jay-orange),
+    0 0 40px var(--color-jay-orange),
+    0 0 50px var(--color-jay-orange);
+  animation: flicker 1.5s infinite alternate; /* Subtle flicker */
+  letter-spacing: 0.05em; /* A bit more spaced out */
+}
+
+/* Optional: Add a slight glitch on hover for titles */
+.holographic-text:hover {
+  animation: glitch-hover 0.3s steps(1) infinite alternate;
+  cursor: pointer;
+}
+
+
+/* Keyframes for flicker effect */
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 69.999%, 71%, 100% {
+    text-shadow:
+      0 0 5px var(--color-jay-orange),
+      0 0 10px var(--color-jay-orange),
+      0 0 15px var(--color-jay-orange),
+      0 0 20px var(--color-jay-orange),
+      0 0 35px var(--color-jay-orange),
+      0 0 40px var(--color-jay-orange),
+      0 0 50px var(--color-jay-orange);
+    color: var(--color-jay-white);
+  }
+  20%, 21.999%, 63%, 63.999%, 70%, 70.999% {
+    text-shadow: none;
+    color: var(--color-jay-orange); /* Brief color shift */
+  }
+}
+
+/* Keyframes for a more aggressive glitch on hover */
+@keyframes glitch-hover {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+
+.shadow-inner-neon {
+  box-shadow: inset 0 0 8px rgba(255, 165, 0, 0.4), 
+              inset 0 0 15px rgba(255, 165, 0, 0.1);
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+  background-color: var(--color-jay-black); /* Jay-black background for the scrollbar area */
+}
+
+/* Scrollbar Track (the area behind the thumb) */
+::-webkit-scrollbar-track {
+  background-color: var(--color-jay-dark); /* A slightly lighter shade for the track */
+  border-radius: 10px; /* Rounded corners for the track */
+  border: 1px solid rgba(255, 165, 0, 0.1); /* Subtle orange border */
+}
+
+/* Scrollbar Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-jay-orange); /* Jay-orange for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid var(--color-jay-black); /* Border around the thumb to separate from track */
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.7); /* Neon glow effect for the thumb */
+}
+
+/* Scrollbar Thumb on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-jay-orange); /* Keep same color */
+  box-shadow: 0 0 8px rgba(255, 165, 0, 1); /* Intensify glow on hover */
+  transform: scale(1.05); /* Subtle scale effect (might not work reliably on all browsers) */
+  transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+
+/* Optional: For Firefox compatibility (less customizable) */
+/* This will only change the color of the thumb and track, not shape/size */
+/* For the whole page scrollbar */
+html {
+  scrollbar-color: var(--color-jay-orange) var(--color-jay-dark); /* thumb color, track color */
+  scrollbar-width: thin; /* auto | thin | none */
+}
+
+/* 🌟 HIDE DEFAULT CURSOR 🌟 */
+html, body {
+  cursor: none; /* Hides the default cursor */
+}
+
+/* You might want to override this for text inputs if you need the default text cursor */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  cursor: text; /* Show text cursor for input fields */
+}
+
+button, a, .cursor-pointer {
+  cursor: none; /* Keep custom cursor for buttons/links, unless you prefer default pointer */
+  /* Or if you want a default pointer for interactive elements, uncomment below */
+cursor: pointer !important;
+}
+
+/* 🌟 Custom Scrollbar Hiding for Horizontal Showcase 🌟 */
+.scrollbar-hide-force {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide-force::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+@keyframes image-glitch-flash {
+  0% {
+    filter: brightness(1) saturate(1) hue-rotate(0deg);
+  }
+  25% {
+    filter: brightness(1.2) saturate(1.5) hue-rotate(5deg);
+  }
+  50% {
+    filter: brightness(0.8) saturate(0.8) hue-rotate(-5deg);
+  }
+  75% {
+    filter: brightness(1.1) saturate(1.2) hue-rotate(2deg);
+  }
+  100% {
+    filter: brightness(1) saturate(1) hue-rotate(0deg);
+  }
+}
+
+/* Custom utility class to apply the glitch on group hover */
+/* Apply 'group' class to the parent container, and 'group-hover-glitch' to the Image component */
+.group:hover .group-hover-glitch {
+  animation: image-glitch-flash 0.3s ease-in-out; /* Quick, subtle animation */
+}
+
+/* Optional: Ensure transitions for filter properties if you want smoother hover in/out */
+.group-hover-glitch {
+    transition: filter 0.1s ease-out; /* Smooth transition for filter changes */
+}
+
+/* Also ensure Image component has a transition for scale/transform on hover */
+
+
+/* 🌟 NEW: Holographic Video Frame/Border 🌟 */
+.video-holographic-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 165, 0, 0.3); /* Base border */
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.2); /* Subtle outer glow */
+}
+
+/* Pseudo-elements for the scanning/glowing lines */
+.video-holographic-frame::before,
+.video-holographic-frame::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 165, 0, 0.8), /* Brighter neon orange */
+    transparent
+  );
+  animation: scan-line 3s linear infinite;
+  opacity: 0.5; /* Subtle scan line */
+}
+
+.video-holographic-frame::before {
+  top: 0;
+  left: -100%; /* Start off screen */
+  width: 100%;
+  height: 2px; /* Thin line */
+}
+
+.video-holographic-frame::after {
+  bottom: 0;
+  right: -100%; /* Start off screen, move opposite direction */
+  width: 100%;
+  height: 2px;
+  animation-delay: 1.5s; /* Stagger second line */
+  animation-direction: reverse; /* Move in opposite direction */
+}
+
+@keyframes scan-line {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(200%); } /* Move across the container */
+}
+
+/* Optional: Add a subtle overlay for "scanline" or "CRT" feel */
+.video-holographic-frame video {
+    position: relative;
+    z-index: 1; /* Ensure video is above pseudo-elements if they were on top */
+    /* Add any other video specific styles */
+}
+
+/* This will create an overlay that moves. If you want more subtle texture on the video itself: */
+/*
+.video-holographic-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 50%), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 100% 4px, 4px 100%;
+    animation: scan-lines-subtle 1s linear infinite;
+    z-index: 2; // Above video
+    pointer-events: none;
+}
+@keyframes scan-lines-subtle {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 0 -4px, -4px 0; }
+}
+*/
