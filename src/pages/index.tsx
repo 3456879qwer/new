@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { motion, useAnimationControls } from 'framer-motion';
 import TypewriterEffect from '@/components/TypewriterEffect';
-import { Player as LottiePlayer } from '@lottiefiles/react-lottie-player'; 
+import dynamic from 'next/dynamic';const LottiePlayer = dynamic(  () => import('@lottiefiles/react-lottie-player').then(mod => mod.Player),  { ssr: false }); 
 
 
 const HOMEPAGE_TOOLS = [

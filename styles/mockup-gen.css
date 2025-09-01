@@ -1,0 +1,148 @@
+.mockup-gen {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.mockup-gen h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.template-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.template-selector button {
+  padding: 0.6rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.template-selector button:hover {
+  background: #f0f0f0;
+}
+
+.template-selector button.active {
+  border-color: #0070f3;
+  background: #e6f0ff;
+  color: #0070f3;
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.controls input[type="file"] {
+  padding: 0.4rem;
+}
+
+.controls input[type="range"],
+.controls select {
+  margin-top: 0.3rem;
+}
+
+.controls button {
+  padding: 0.6rem 1.2rem;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.controls button:hover {
+  background: #005bb5;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto 1rem;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.success {
+  text-align: center;
+  color: #0a8f08;
+  font-weight: 500;
+}
+
+.error {
+  text-align: center;
+  color: #d93025;
+  font-weight: 500;
+}
+@media (prefers-color-scheme: dark) {
+  .mockup-gen {
+    background: #1e1e1e;
+    color: #f5f5f5;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  .mockup-gen h1 {
+    color: #fff;
+  }
+
+  .template-selector button {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #ddd;
+  }
+
+  .template-selector button:hover {
+    background: #333;
+  }
+
+  .template-selector button.active {
+    background: #005bb5;
+    border-color: #0070f3;
+    color: #fff;
+  }
+
+  .controls label {
+    color: #ccc;
+  }
+
+  .controls button {
+    background: #0070f3;
+  }
+
+  .controls button:hover {
+    background: #005bb5;
+  }
+
+  canvas {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+}
